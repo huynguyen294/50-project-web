@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/067319fd4d.js" crossorigin="anonymous"></script>
     <title>50 project web</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap');
@@ -11,6 +12,20 @@
         *{
             margin: 0;
             padding: 0;
+        }
+
+        :root{
+            --text-color: #fff;
+        }
+
+        html{
+            background-color: #1b1d21;
+            transition: all .5s linear;
+        }
+
+        html.dark{
+            --text-color: #1b1d21;
+            background-color: #ccc;
         }
 
         body{
@@ -23,7 +38,31 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-color: #1b1d21;
+            transition: all .5s ease-in-out;
+        }
+
+        i{
+            padding: 10px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            font-size: 30px;
+            position: absolute;
+            top: .5em;
+            right: 2em;
+        }
+        
+        @media (max-width: 46.1875em){
+            i{
+                font-size: 18px;
+                top: .5em;
+                right: 1em;
+            }
+        }
+
+        h1, p, i{
+            color: var(--text-color);
+            margin-top: 1em;
         }
 
         a:nth-of-type(1){
@@ -33,7 +72,7 @@
         a{
             background-color: #ff7a00;
             text-decoration: none;
-            color: #fff;
+            color: var(--text-color);
             width: 200px;
             text-align: center;
             margin: 10px;
@@ -48,6 +87,9 @@
 </head>
 <body>
     <div class="container">
+        <i class="fa fa-solid fa-moon"></i>
+        <h1>50 project web</h1>
+        <p>Click any button to feeling</p>
         <a href="./01_expanding_card/">expanding card</a>
         <a href="./02_step_progress/">step progress</a>
         <a href="./04_hidden_search/">hidden search</a>
@@ -66,6 +108,17 @@
         <a href="./17_movie_app/master/">movie app</a>
         <a href="./18_background_slider/">background slider</a>
         <a href="./19_theme_clock/">theme clock</a>
+        <a href="./20_button_effect/">button effect</a>
     </div>
 </body>
+
+    <script>
+        const html = document.querySelector('html')
+        const DMButton = document.querySelector('i')
+
+        DMButton.addEventListener('click', () => {
+            html.classList.toggle('dark')
+        })
+    </script>
+
 </html>
