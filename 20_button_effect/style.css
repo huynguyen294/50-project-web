@@ -30,6 +30,7 @@ button {
   overflow: hidden;
   position: relative;
   cursor: pointer;
+  margin: 10px;
 }
 
 button:focus-visible {

@@ -1,24 +1,23 @@
-const buttons = document.querySelectorAll('.ripple')
+const buttons = document.querySelectorAll('.ripple');
 
-buttons.forEach(button => {
-    button.addEventListener('click', (ev) => {
-        const x = ev.clientX
-        const y = ev.clientY
-    
-        const buttonTop = ev.target.offsetTop
-        const buttonLeft = ev.target.offsetLeft
+buttons.forEach((button) => {
+  button.addEventListener('click', (ev) => {
+    const x = ev.clientX;
+    const y = ev.clientY;
 
-        const xInside = x - buttonLeft
-        const yInside = y - buttonTop
+    const buttonTop = ev.target.offsetTop;
+    const buttonLeft = ev.target.offsetLeft;
 
-        const circle = document.createElement('span')
-        circle.classList.add('circle')
-        circle.style.top = yInside + 'px'
-        circle.style.left = xInside + 'px'
+    const xInside = x - buttonLeft;
+    const yInside = y - buttonTop;
 
-        ev.target.appendChild(circle)
+    const circle = document.createElement('span');
+    circle.classList.add('circle');
+    circle.style.top = yInside + 'px';
+    circle.style.left = xInside + 'px';
 
-        setTimeout(()=>circle.remove(),500)
-        
-    })  
-})
+    ev.target.appendChild(circle);
+
+    setTimeout(() => circle.remove(), 500);
+  });
+});
